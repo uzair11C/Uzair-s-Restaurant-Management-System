@@ -40,11 +40,12 @@ public class LandingPage extends javax.swing.JFrame
         kButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         kButton1.setkBackGroundColor(new java.awt.Color(153, 0, 153));
         kButton1.setkBorderRadius(45);
-        kButton1.setkEndColor(new java.awt.Color(51, 255, 255));
-        kButton1.setkHoverEndColor(new java.awt.Color(255, 153, 204));
+        kButton1.setkEndColor(new java.awt.Color(102, 255, 102));
+        kButton1.setkHoverEndColor(new java.awt.Color(153, 255, 255));
         kButton1.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        kButton1.setkHoverStartColor(new java.awt.Color(204, 0, 255));
-        kButton1.setkStartColor(new java.awt.Color(0, 0, 204));
+        kButton1.setkHoverStartColor(new java.awt.Color(0, 0, 153));
+        kButton1.setkPressedColor(new java.awt.Color(255, 0, 0));
+        kButton1.setkStartColor(new java.awt.Color(255, 96, 0));
         kButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kButton1ActionPerformed(evt);
@@ -56,11 +57,12 @@ public class LandingPage extends javax.swing.JFrame
         kButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         kButton2.setkBackGroundColor(new java.awt.Color(153, 0, 153));
         kButton2.setkBorderRadius(45);
-        kButton2.setkEndColor(new java.awt.Color(34, 0, 255));
+        kButton2.setkEndColor(new java.awt.Color(255, 0, 255));
         kButton2.setkHoverEndColor(new java.awt.Color(255, 153, 204));
         kButton2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         kButton2.setkHoverStartColor(new java.awt.Color(204, 0, 255));
-        kButton2.setkStartColor(new java.awt.Color(212, 0, 255));
+        kButton2.setkPressedColor(new java.awt.Color(255, 0, 51));
+        kButton2.setkStartColor(new java.awt.Color(102, 0, 102));
         kButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kButton2ActionPerformed(evt);
@@ -77,9 +79,9 @@ public class LandingPage extends javax.swing.JFrame
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
+                .addContainerGap(89, Short.MAX_VALUE)
                 .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addGap(126, 126, 126)
                 .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(89, 89, 89))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
@@ -103,11 +105,11 @@ public class LandingPage extends javax.swing.JFrame
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,20 +133,17 @@ public class LandingPage extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
-        JOptionPane.showMessageDialog(
-                null,
-                "You are here to eat!",
-                "Customer",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        WelcomePage welcome = new WelcomePage();
+        welcome.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_kButton2ActionPerformed
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
         JOptionPane.showMessageDialog(
-                null,
-                "You are here to work!",
-                "Employee",
-                JOptionPane.INFORMATION_MESSAGE
+            null,
+            "You are here to work!",
+            "Employee",
+            JOptionPane.INFORMATION_MESSAGE
         );
     }//GEN-LAST:event_kButton1ActionPerformed
 
