@@ -3,6 +3,7 @@
  * @author uzair
  */
 
+import CustomerPackage.WelcomePage;
 import javax.swing.JOptionPane;
 
 public class LandingPage extends javax.swing.JFrame
