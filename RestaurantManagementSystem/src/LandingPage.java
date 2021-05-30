@@ -1,13 +1,7 @@
-/**
- *
- * @author uzair
- */
 
-import CustomerPackage.WelcomePage;
-import javax.swing.JOptionPane;
+import RoleSelector.RoleSelector;
 
-public class LandingPage extends javax.swing.JFrame
-{
+public class LandingPage extends javax.swing.JFrame {
 
     /**
      * Creates new form LandingPage
@@ -25,129 +19,56 @@ public class LandingPage extends javax.swing.JFrame
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
         kButton1 = new keeptoo.KButton();
-        kButton2 = new keeptoo.KButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 0, 204));
-        kGradientPanel1.setkStartColor(new java.awt.Color(102, 204, 255));
-
-        kButton1.setBorder(null);
-        kButton1.setText("Employee");
-        kButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        kButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        kButton1.setkBackGroundColor(new java.awt.Color(153, 0, 153));
-        kButton1.setkBorderRadius(45);
-        kButton1.setkEndColor(new java.awt.Color(102, 255, 102));
-        kButton1.setkHoverEndColor(new java.awt.Color(153, 255, 255));
+        kButton1.setText("Continue");
+        kButton1.setFont(new java.awt.Font("Formal436 BT", 1, 24)); // NOI18N
+        kButton1.setkEndColor(new java.awt.Color(0, 0, 153));
         kButton1.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        kButton1.setkHoverStartColor(new java.awt.Color(0, 0, 153));
-        kButton1.setkPressedColor(new java.awt.Color(255, 0, 0));
-        kButton1.setkStartColor(new java.awt.Color(255, 96, 0));
+        kButton1.setkStartColor(new java.awt.Color(0, 204, 255));
         kButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
-        kButton2.setBorder(null);
-        kButton2.setText("Customer");
-        kButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        kButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        kButton2.setkBackGroundColor(new java.awt.Color(153, 0, 153));
-        kButton2.setkBorderRadius(45);
-        kButton2.setkEndColor(new java.awt.Color(255, 0, 255));
-        kButton2.setkHoverEndColor(new java.awt.Color(255, 153, 204));
-        kButton2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        kButton2.setkHoverStartColor(new java.awt.Color(204, 0, 255));
-        kButton2.setkPressedColor(new java.awt.Color(255, 0, 51));
-        kButton2.setkStartColor(new java.awt.Color(102, 0, 102));
-        kButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kButton2ActionPerformed(evt);
-            }
-        });
+        jLabel4.setFont(new java.awt.Font("Raleway", 0, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Our Resaurant!");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 360, -1));
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Raleway", 0, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Welcome to");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Formal436 BT", 1, 60)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Are you a customer or an employee?");
+        jLabel1.setText("Hello There!");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 360, 60));
 
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
-        kGradientPanel1.setLayout(kGradientPanel1Layout);
-        kGradientPanel1Layout.setHorizontalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap(93, Short.MAX_VALUE)
-                .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
-                .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91))
-        );
-        kGradientPanel1Layout.setVerticalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(73, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Background.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
-        WelcomePage welcome = new WelcomePage();
-        welcome.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_kButton2ActionPerformed
-
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
-        JOptionPane.showMessageDialog(
-            null,
-            "You are here to work!",
-            "Employee",
-            JOptionPane.INFORMATION_MESSAGE
-        );
+        RoleSelector selector = new RoleSelector();
+        selector.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_kButton1ActionPerformed
 
     /**
@@ -187,9 +108,9 @@ public class LandingPage extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private keeptoo.KButton kButton1;
-    private keeptoo.KButton kButton2;
-    private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }
