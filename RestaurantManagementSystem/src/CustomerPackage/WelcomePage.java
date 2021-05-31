@@ -2,8 +2,6 @@ package CustomerPackage;
 
 import javax.swing.JOptionPane;
 
-
-
 public class WelcomePage extends javax.swing.JFrame {
 
     /**
@@ -28,7 +26,7 @@ public class WelcomePage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        DineInButton = new keeptoo.KButton();
+        HomeDeliveryButton = new keeptoo.KButton();
         TakeawayButton = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,19 +53,43 @@ public class WelcomePage extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("So, how can we help you?");
 
-        DineInButton.setText("Dine-In");
+        HomeDeliveryButton.setText("Home Delivery");
+        HomeDeliveryButton.setFont(new java.awt.Font("Raleway", 1, 24)); // NOI18N
+        HomeDeliveryButton.setkEndColor(new java.awt.Color(0, 255, 255));
+        HomeDeliveryButton.setkHoverEndColor(new java.awt.Color(0, 0, 204));
+        HomeDeliveryButton.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        HomeDeliveryButton.setkPressedColor(new java.awt.Color(0, 102, 255));
+        HomeDeliveryButton.setkStartColor(new java.awt.Color(0, 0, 204));
+        HomeDeliveryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HomeDeliveryButtonActionPerformed(evt);
+            }
+        });
 
         TakeawayButton.setText("Take-away");
+        TakeawayButton.setFont(new java.awt.Font("Raleway", 1, 24)); // NOI18N
+        TakeawayButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        TakeawayButton.setkEndColor(new java.awt.Color(0, 0, 255));
+        TakeawayButton.setkHoverEndColor(new java.awt.Color(0, 255, 255));
+        TakeawayButton.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        TakeawayButton.setkHoverStartColor(new java.awt.Color(0, 0, 153));
+        TakeawayButton.setkPressedColor(new java.awt.Color(255, 0, 102));
+        TakeawayButton.setkStartColor(new java.awt.Color(204, 0, 204));
+        TakeawayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TakeawayButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(DineInButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(189, 189, 189)
-                .addComponent(TakeawayButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(294, 294, 294)
+                .addComponent(HomeDeliveryButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(251, 251, 251)
+                .addComponent(TakeawayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -82,16 +104,16 @@ public class WelcomePage extends javax.swing.JFrame {
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DineInButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HomeDeliveryButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TakeawayButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36))
         );
@@ -128,22 +150,30 @@ public class WelcomePage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
-        JOptionPane.showMessageDialog(
-            null,
-            "You want take away!",
-            "Take away",
-            JOptionPane.INFORMATION_MESSAGE
-        );
+        
     }//GEN-LAST:event_kButton2ActionPerformed
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
-       JOptionPane.showMessageDialog(
-            null,
-            "You want home delivery!",
-            "Home Delivery",
-            JOptionPane.INFORMATION_MESSAGE
-        );
+
     }//GEN-LAST:event_kButton1ActionPerformed
+
+    private void HomeDeliveryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeDeliveryButtonActionPerformed
+        JOptionPane.showMessageDialog(
+                null,
+                "You want home delivery!",
+                "Home Delivery",
+                JOptionPane.INFORMATION_MESSAGE
+        );
+    }//GEN-LAST:event_HomeDeliveryButtonActionPerformed
+
+    private void TakeawayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TakeawayButtonActionPerformed
+        JOptionPane.showMessageDialog(
+                null,
+                "You want take away!",
+                "Take away",
+                JOptionPane.INFORMATION_MESSAGE
+        );
+    }//GEN-LAST:event_TakeawayButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,13 +205,15 @@ public class WelcomePage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new WelcomePage().setVisible(true);
+                WelcomePage wp = new WelcomePage();
+                wp.setVisible(true);
+                wp.setResizable(false);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private keeptoo.KButton DineInButton;
+    private keeptoo.KButton HomeDeliveryButton;
     private keeptoo.KButton TakeawayButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

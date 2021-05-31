@@ -46,7 +46,12 @@ public class RoleSelector extends javax.swing.JFrame
         CustomerRoleButton.setText("Customer");
         CustomerRoleButton.setFont(new java.awt.Font("Raleway", 1, 24)); // NOI18N
         CustomerRoleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        CustomerRoleButton.setkBorderRadius(30);
         CustomerRoleButton.setkEndColor(new java.awt.Color(0, 0, 255));
+        CustomerRoleButton.setkHoverEndColor(new java.awt.Color(51, 204, 255));
+        CustomerRoleButton.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        CustomerRoleButton.setkHoverStartColor(new java.awt.Color(0, 0, 204));
+        CustomerRoleButton.setkPressedColor(new java.awt.Color(255, 0, 153));
         CustomerRoleButton.setkStartColor(new java.awt.Color(153, 0, 153));
         CustomerRoleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +61,11 @@ public class RoleSelector extends javax.swing.JFrame
 
         EmployeeRoleButton.setText("Employee");
         EmployeeRoleButton.setFont(new java.awt.Font("Raleway", 1, 24)); // NOI18N
+        EmployeeRoleButton.setkBorderRadius(30);
         EmployeeRoleButton.setkEndColor(new java.awt.Color(51, 204, 255));
+        EmployeeRoleButton.setkHoverEndColor(new java.awt.Color(0, 0, 153));
+        EmployeeRoleButton.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        EmployeeRoleButton.setkPressedColor(new java.awt.Color(255, 0, 153));
         EmployeeRoleButton.setkStartColor(new java.awt.Color(0, 0, 255));
         EmployeeRoleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,11 +82,11 @@ public class RoleSelector extends javax.swing.JFrame
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(CustomerRoleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(CustomerRoleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(EmployeeRoleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56))
+                .addComponent(EmployeeRoleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,9 +95,9 @@ public class RoleSelector extends javax.swing.JFrame
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CustomerRoleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EmployeeRoleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(63, Short.MAX_VALUE))
+                    .addComponent(CustomerRoleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EmployeeRoleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -169,7 +178,9 @@ public class RoleSelector extends javax.swing.JFrame
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RoleSelector().setVisible(true);
+                RoleSelector rs = new RoleSelector();
+                rs.setVisible(true);
+                rs.setResizable(false);
             }
         });
     }

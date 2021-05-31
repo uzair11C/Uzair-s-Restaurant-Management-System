@@ -50,13 +50,13 @@ public class LandingPage extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Welcome to");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Formal436 BT", 1, 60)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hello There!");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 360, 60));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 360, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Background.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -101,7 +101,9 @@ public class LandingPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LandingPage().setVisible(true);
+               LandingPage lp = new LandingPage();
+               lp.setVisible(true);
+                lp.setResizable(false);
             }
         });
     }
