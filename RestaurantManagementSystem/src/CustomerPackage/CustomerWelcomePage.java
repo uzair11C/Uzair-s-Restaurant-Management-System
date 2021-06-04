@@ -2,12 +2,12 @@ package CustomerPackage;
 
 import javax.swing.JOptionPane;
 
-public class WelcomePage extends javax.swing.JFrame {
+public class CustomerWelcomePage extends javax.swing.JFrame {
 
     /**
      * Creates new form WelcomePage
      */
-    public WelcomePage() {
+    public CustomerWelcomePage() {
         initComponents();
     }
 
@@ -27,7 +27,6 @@ public class WelcomePage extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         HomeDeliveryButton = new keeptoo.KButton();
-        TakeawayButton = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,7 +45,7 @@ public class WelcomePage extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Goudy Old Style", 1, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Currently our business is small so we only manage take-aways and home deliveries");
+        jLabel3.setText("Currently our business is small so we only manage take-aways");
 
         jLabel4.setFont(new java.awt.Font("Raleway", 0, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -66,31 +65,10 @@ public class WelcomePage extends javax.swing.JFrame {
             }
         });
 
-        TakeawayButton.setText("Take-away");
-        TakeawayButton.setFont(new java.awt.Font("Raleway", 1, 24)); // NOI18N
-        TakeawayButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        TakeawayButton.setkEndColor(new java.awt.Color(0, 0, 255));
-        TakeawayButton.setkHoverEndColor(new java.awt.Color(0, 255, 255));
-        TakeawayButton.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        TakeawayButton.setkHoverStartColor(new java.awt.Color(0, 0, 153));
-        TakeawayButton.setkPressedColor(new java.awt.Color(255, 0, 102));
-        TakeawayButton.setkStartColor(new java.awt.Color(204, 0, 204));
-        TakeawayButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TakeawayButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(294, 294, 294)
-                .addComponent(HomeDeliveryButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(251, 251, 251)
-                .addComponent(TakeawayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,6 +77,10 @@ public class WelcomePage extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1155, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(485, 485, 485)
+                .addComponent(HomeDeliveryButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,9 +94,7 @@ public class WelcomePage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HomeDeliveryButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TakeawayButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(HomeDeliveryButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
 
@@ -149,31 +129,11 @@ public class WelcomePage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
-        
-    }//GEN-LAST:event_kButton2ActionPerformed
-
-    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
-
-    }//GEN-LAST:event_kButton1ActionPerformed
-
     private void HomeDeliveryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeDeliveryButtonActionPerformed
-        JOptionPane.showMessageDialog(
-                null,
-                "You want home delivery!",
-                "Home Delivery",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        OrderPage order = new OrderPage();
+        order.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_HomeDeliveryButtonActionPerformed
-
-    private void TakeawayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TakeawayButtonActionPerformed
-        JOptionPane.showMessageDialog(
-                null,
-                "You want take away!",
-                "Take away",
-                JOptionPane.INFORMATION_MESSAGE
-        );
-    }//GEN-LAST:event_TakeawayButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,20 +152,21 @@ public class WelcomePage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(WelcomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerWelcomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(WelcomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerWelcomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(WelcomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerWelcomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(WelcomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerWelcomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                WelcomePage wp = new WelcomePage();
+                CustomerWelcomePage wp = new CustomerWelcomePage();
                 wp.setVisible(true);
                 wp.setResizable(false);
             }
@@ -214,7 +175,6 @@ public class WelcomePage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private keeptoo.KButton HomeDeliveryButton;
-    private keeptoo.KButton TakeawayButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

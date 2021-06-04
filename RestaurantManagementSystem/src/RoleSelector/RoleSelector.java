@@ -5,7 +5,7 @@ package RoleSelector;
  * @author uzair
  */
 
-import CustomerPackage.WelcomePage;
+import CustomerPackage.CustomerWelcomePage;
 import javax.swing.JOptionPane;
 
 public class RoleSelector extends javax.swing.JFrame
@@ -142,7 +142,7 @@ public class RoleSelector extends javax.swing.JFrame
 
     private void CustomerRoleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerRoleButtonActionPerformed
         
-        WelcomePage welcome = new WelcomePage();
+        CustomerWelcomePage welcome = new CustomerWelcomePage();
         welcome.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CustomerRoleButtonActionPerformed
