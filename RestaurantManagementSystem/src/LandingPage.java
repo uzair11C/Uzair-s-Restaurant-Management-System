@@ -31,6 +31,7 @@ public class LandingPage extends javax.swing.JFrame {
         kButton1.setText("Continue");
         kButton1.setFont(new java.awt.Font("Formal436 BT", 1, 24)); // NOI18N
         kButton1.setkEndColor(new java.awt.Color(0, 0, 153));
+        kButton1.setkHoverEndColor(new java.awt.Color(0, 0, 255));
         kButton1.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         kButton1.setkStartColor(new java.awt.Color(0, 204, 255));
         kButton1.addActionListener(new java.awt.event.ActionListener() {

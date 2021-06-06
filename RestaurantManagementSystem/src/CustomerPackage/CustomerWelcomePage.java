@@ -26,7 +26,7 @@ public class CustomerWelcomePage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        HomeDeliveryButton = new keeptoo.KButton();
+        OrderNowButton = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,16 +52,16 @@ public class CustomerWelcomePage extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("So, how can we help you?");
 
-        HomeDeliveryButton.setText("Home Delivery");
-        HomeDeliveryButton.setFont(new java.awt.Font("Raleway", 1, 24)); // NOI18N
-        HomeDeliveryButton.setkEndColor(new java.awt.Color(0, 255, 255));
-        HomeDeliveryButton.setkHoverEndColor(new java.awt.Color(0, 0, 204));
-        HomeDeliveryButton.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        HomeDeliveryButton.setkPressedColor(new java.awt.Color(0, 102, 255));
-        HomeDeliveryButton.setkStartColor(new java.awt.Color(0, 0, 204));
-        HomeDeliveryButton.addActionListener(new java.awt.event.ActionListener() {
+        OrderNowButton.setText("Order Now");
+        OrderNowButton.setFont(new java.awt.Font("Raleway", 1, 24)); // NOI18N
+        OrderNowButton.setkEndColor(new java.awt.Color(0, 255, 255));
+        OrderNowButton.setkHoverEndColor(new java.awt.Color(0, 0, 204));
+        OrderNowButton.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        OrderNowButton.setkPressedColor(new java.awt.Color(0, 102, 255));
+        OrderNowButton.setkStartColor(new java.awt.Color(0, 0, 204));
+        OrderNowButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HomeDeliveryButtonActionPerformed(evt);
+                OrderNowButtonActionPerformed(evt);
             }
         });
 
@@ -79,7 +79,7 @@ public class CustomerWelcomePage extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGap(485, 485, 485)
-                .addComponent(HomeDeliveryButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(OrderNowButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
@@ -94,7 +94,7 @@ public class CustomerWelcomePage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(HomeDeliveryButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(OrderNowButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
 
@@ -129,11 +129,11 @@ public class CustomerWelcomePage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void HomeDeliveryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeDeliveryButtonActionPerformed
+    private void OrderNowButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderNowButtonActionPerformed
         OrderPage order = new OrderPage();
         order.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_HomeDeliveryButtonActionPerformed
+    }//GEN-LAST:event_OrderNowButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,7 +174,7 @@ public class CustomerWelcomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private keeptoo.KButton HomeDeliveryButton;
+    private keeptoo.KButton OrderNowButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

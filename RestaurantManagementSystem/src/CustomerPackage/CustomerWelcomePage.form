@@ -76,7 +76,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="485" max="-2" attributes="0"/>
-                      <Component id="HomeDeliveryButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="OrderNowButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -93,7 +93,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="HomeDeliveryButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="OrderNowButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -148,9 +148,9 @@
                 <Property name="text" type="java.lang.String" value="So, how can we help you?"/>
               </Properties>
             </Component>
-            <Component class="keeptoo.KButton" name="HomeDeliveryButton">
+            <Component class="keeptoo.KButton" name="OrderNowButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Home Delivery"/>
+                <Property name="text" type="java.lang.String" value="Order Now"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Raleway" size="24" style="1"/>
                 </Property>
@@ -171,7 +171,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HomeDeliveryButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OrderNowButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
