@@ -45,7 +45,7 @@ public class CustomerWelcomePage extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Goudy Old Style", 1, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Currently our business is small so we only manage take-aways");
+        jLabel3.setText("Currently our business is small and also due to Corona we only manage take-aways");
 
         jLabel4.setFont(new java.awt.Font("Raleway", 0, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));

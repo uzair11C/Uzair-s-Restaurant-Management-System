@@ -133,7 +133,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Currently our business is small so we only manage take-aways"/>
+                <Property name="text" type="java.lang.String" value="Currently our business is small and also due to Corona we only manage take-aways"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">

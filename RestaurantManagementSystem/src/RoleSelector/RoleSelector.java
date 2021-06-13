@@ -1,16 +1,10 @@
 package RoleSelector;
 
-/**
- *
- * @author uzair
- */
-
 import CustomerPackage.CustomerWelcomePage;
 import javax.swing.JOptionPane;
 
 public class RoleSelector extends javax.swing.JFrame
 {
-
     /**
      * Creates new form LandingPage
      */
@@ -141,7 +135,7 @@ public class RoleSelector extends javax.swing.JFrame
     }//GEN-LAST:event_EmployeeRoleButtonActionPerformed
 
     private void CustomerRoleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerRoleButtonActionPerformed
-        
+
         CustomerWelcomePage welcome = new CustomerWelcomePage();
         welcome.setVisible(true);
         this.dispose();
@@ -176,7 +170,8 @@ public class RoleSelector extends javax.swing.JFrame
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable()
+        {
             public void run() {
                 RoleSelector rs = new RoleSelector();
                 rs.setVisible(true);

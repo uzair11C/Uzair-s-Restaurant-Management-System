@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package CustomerPackage;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class OrderPage extends javax.swing.JFrame {
 
@@ -41,7 +35,7 @@ public class OrderPage extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("What would you like to order?");
 
-        jCheckBox1.setFont(new java.awt.Font("Raleway", 1, 30)); // NOI18N
+        jCheckBox1.setFont(new java.awt.Font("Raleway", 1, 24)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
         jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jCheckBox1.setLabel("Tandoori Pizza");
@@ -52,7 +46,7 @@ public class OrderPage extends javax.swing.JFrame {
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 908, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGap(109, 109, 109)
@@ -100,10 +94,8 @@ public class OrderPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    public static void main(String args[])
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -128,11 +120,13 @@ public class OrderPage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable()
+        {
             public void run() {
                 OrderPage order = new OrderPage();
-                order.setVisible(true);
                 order.setResizable(false);
+                order.setVisible(true);
+                
             }
         });
     }
