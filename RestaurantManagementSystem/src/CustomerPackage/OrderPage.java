@@ -1,11 +1,14 @@
 package CustomerPackage;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class OrderPage extends javax.swing.JFrame 
 {
     public ArrayList<String> foodItems = new ArrayList<String>();
     
+    StringBuilder bill = new StringBuilder();
+
     /**
      * Creates new form OrderPage
      */
@@ -32,8 +35,10 @@ public class OrderPage extends javax.swing.JFrame
         fajitaPizza = new javax.swing.JCheckBox();
         jTextField3 = new javax.swing.JTextField();
         bbqPizza = new javax.swing.JCheckBox();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        billGenerator = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,7 +55,10 @@ public class OrderPage extends javax.swing.JFrame
 
         tandooriPizza.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
         tandooriPizza.setForeground(new java.awt.Color(0, 0, 0));
+        tandooriPizza.setOpaque(false);
         tandooriPizza.setText(" Tandoori Pizza");
+        tandooriPizza.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tandooriPizza.setFocusable(false);
         tandooriPizza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tandooriPizza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +76,9 @@ public class OrderPage extends javax.swing.JFrame
 
         fajitaPizza.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
         fajitaPizza.setForeground(new java.awt.Color(0, 0, 0));
+        fajitaPizza.setOpaque(false);
         fajitaPizza.setText(" Fajita Pizza");
+        fajitaPizza.setFocusable(false);
         fajitaPizza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fajitaPizza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,13 +92,18 @@ public class OrderPage extends javax.swing.JFrame
 
         bbqPizza.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
         bbqPizza.setForeground(new java.awt.Color(0, 0, 0));
+        bbqPizza.setOpaque(false);
         bbqPizza.setText(" B.B.Q Pizza");
+        bbqPizza.setFocusable(false);
         bbqPizza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bbqPizza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bbqPizzaActionPerformed(evt);
             }
         });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3" }));
+        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -110,6 +125,10 @@ public class OrderPage extends javax.swing.JFrame
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(113, 113, 113)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +145,9 @@ public class OrderPage extends javax.swing.JFrame
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bbqPizza, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(320, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 0), new java.awt.Color(102, 0, 0)), "Burgers", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Raleway", 1, 36), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -158,6 +179,13 @@ public class OrderPage extends javax.swing.JFrame
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        billGenerator.setText("Generate Bill");
+        billGenerator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                billGeneratorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
@@ -165,26 +193,32 @@ public class OrderPage extends javax.swing.JFrame
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(243, 243, 243)
+                .addComponent(billGenerator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(billGenerator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -221,38 +255,51 @@ public class OrderPage extends javax.swing.JFrame
     private void tandooriPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tandooriPizzaActionPerformed
         if(tandooriPizza.isSelected())
         {
-            //foodItems.add(tandooriPizza.getLabel());
-             System.out.println("Checked " + tandooriPizza.getLabel());
+            foodItems.add(tandooriPizza.getLabel());
+            System.out.println("Checked " + tandooriPizza.getLabel());
         }
         else
         {
             System.out.println("UnChecked");
+            foodItems.remove(tandooriPizza.getLabel());
         }
     }//GEN-LAST:event_tandooriPizzaActionPerformed
 
     private void fajitaPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fajitaPizzaActionPerformed
         if(fajitaPizza.isSelected())
         {
-            //foodItems.add(fajitaPizza.getLabel());
-             System.out.println("Checked " + fajitaPizza.getLabel());
+            foodItems.add(fajitaPizza.getLabel());
+            System.out.println("Checked " + fajitaPizza.getLabel());
         }
         else
         {
             System.out.println("UnChecked");
+            foodItems.remove(fajitaPizza.getLabel());
         }
     }//GEN-LAST:event_fajitaPizzaActionPerformed
 
     private void bbqPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bbqPizzaActionPerformed
         if(bbqPizza.isSelected())
         {
-            //foodItems.add(bbqPizza.getLabel());
-             System.out.println("Checked " + bbqPizza.getLabel());
+            foodItems.add(bbqPizza.getLabel());
+            System.out.println("Checked " + bbqPizza.getLabel());
         }
         else
         {
             System.out.println("UnChecked");
+            foodItems.remove(bbqPizza.getLabel());
         }
     }//GEN-LAST:event_bbqPizzaActionPerformed
+
+    private void billGeneratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billGeneratorActionPerformed
+
+        for (int i = 0 ; i < foodItems.size() ; i++)
+        {
+            bill.append(foodItems.get(i)).append(System.lineSeparator());
+        }
+        
+        JOptionPane.showMessageDialog(null,bill,"Your Bill",1);
+    }//GEN-LAST:event_billGeneratorActionPerformed
 
     public static void main(String args[])
     {
@@ -263,7 +310,7 @@ public class OrderPage extends javax.swing.JFrame
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Dark Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -293,7 +340,9 @@ public class OrderPage extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox bbqPizza;
+    private keeptoo.KButton billGenerator;
     private javax.swing.JCheckBox fajitaPizza;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
