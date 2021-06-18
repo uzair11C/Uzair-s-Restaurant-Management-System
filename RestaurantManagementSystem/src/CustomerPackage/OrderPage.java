@@ -292,13 +292,23 @@ public class OrderPage extends javax.swing.JFrame
     }//GEN-LAST:event_bbqPizzaActionPerformed
 
     private void billGeneratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billGeneratorActionPerformed
-
+        
+        Bill bill = new Bill();
+        bill.setVisible(true);
+        bill.BillText.setText(foodItems.toString());
+        
+        /*
         for (int i = 0 ; i < foodItems.size() ; i++)
         {
             bill.append(foodItems.get(i)).append(System.lineSeparator());
         }
         
         JOptionPane.showMessageDialog(null,bill,"Your Bill",1);
+        for (int i = 0 ; i < foodItems.size() ; i++)
+        {
+            bill.append("");
+        }
+        */
     }//GEN-LAST:event_billGeneratorActionPerformed
 
     public static void main(String args[])
