@@ -52,7 +52,23 @@ public class Bill extends javax.swing.JFrame {
         jScrollPane1.getViewport().setOpaque(false);
         jScrollPane1.setOpaque(false);
 
-        kButton1.setText("kButton1");
+        kButton1.setBorder(null);
+        kButton1.setText("OK");
+        kButton1.setFont(new java.awt.Font("Harrington", 1, 36)); // NOI18N
+        kButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        kButton1.setkBorderRadius(15);
+        kButton1.setkEndColor(new java.awt.Color(0, 102, 102));
+        kButton1.setkForeGround(new java.awt.Color(51, 255, 255));
+        kButton1.setkHoverEndColor(new java.awt.Color(0, 0, 153));
+        kButton1.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        kButton1.setkHoverStartColor(new java.awt.Color(204, 0, 204));
+        kButton1.setkPressedColor(new java.awt.Color(255, 0, 51));
+        kButton1.setkStartColor(new java.awt.Color(0, 102, 0));
+        kButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -97,6 +113,13 @@ public class Bill extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
+        OrderPage order = new OrderPage();
+        order.setResizable(false);
+        order.setVisible(true);
+        repaint();
+    }//GEN-LAST:event_kButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -128,8 +151,8 @@ public class Bill extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Bill bill = new Bill();
-                bill.setResizable(false);
                 bill.setVisible(true);
+                bill.setResizable(false);
             }
         });
     }

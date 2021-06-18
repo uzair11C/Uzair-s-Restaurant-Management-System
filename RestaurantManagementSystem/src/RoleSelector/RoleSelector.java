@@ -4,10 +4,7 @@ import CustomerPackage.CustomerWelcomePage;
 import javax.swing.JOptionPane;
 
 public class RoleSelector extends javax.swing.JFrame
-{
-    /**
-     * Creates new form LandingPage
-     */
+{   
     public RoleSelector() {
         initComponents();
     }

@@ -7,11 +7,23 @@ public class OrderPage extends javax.swing.JFrame
 {
     public ArrayList<String> foodItems = new ArrayList<String>();
     
-    StringBuilder bill = new StringBuilder();
+    StringBuilder theBill = new StringBuilder();
 
-    /**
-     * Creates new form OrderPage
-     */
+    
+    
+    public int tp = 1000, fp = 1000 , bp = 1000 ,sp = 1000 , 
+            zb = 350, gb = 300 , jb = 300 ,tb = 300 , 
+               cc = 200 , sd = 100 , teaRate = 70 , hc = 100 , price = 0;
+    
+    public int tpp,fpp,bpp,spp,zbp,gbp,jbp,tbp,ccp,sdp,teap,hcp;
+    
+    public int priceCalculator()
+    {
+        price = tpp + fpp + bpp + spp + zbp + gbp + jbp + tbp  + ccp + sdp + teap + hcp;
+        return price;
+    }
+    
+    
     public OrderPage() {
         initComponents();
     }
@@ -35,10 +47,29 @@ public class OrderPage extends javax.swing.JFrame
         fajitaPizza = new javax.swing.JCheckBox();
         jTextField3 = new javax.swing.JTextField();
         bbqPizza = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        SausagesPizza = new javax.swing.JCheckBox();
+        jTextField12 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
+        zingerBurger = new javax.swing.JCheckBox();
+        jTextField4 = new javax.swing.JTextField();
+        grilledBurger = new javax.swing.JCheckBox();
+        jTextField6 = new javax.swing.JTextField();
+        jalapenoBurger = new javax.swing.JCheckBox();
+        jTextField8 = new javax.swing.JTextField();
+        tikkaBurger = new javax.swing.JCheckBox();
+        jTextField11 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
+        coldCoffee = new javax.swing.JCheckBox();
+        jTextField5 = new javax.swing.JTextField();
+        softDrink = new javax.swing.JCheckBox();
+        jTextField7 = new javax.swing.JTextField();
+        tea = new javax.swing.JCheckBox();
+        jTextField9 = new javax.swing.JTextField();
+        hotCoffee = new javax.swing.JCheckBox();
+        jTextField10 = new javax.swing.JTextField();
         billGenerator = new keeptoo.KButton();
+        exitButton = new keeptoo.KButton();
+        kButton1 = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,6 +80,7 @@ public class OrderPage extends javax.swing.JFrame
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("What would you like to order?");
+        jLabel1.setFocusable(false);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 255), new java.awt.Color(102, 0, 153)), "Pizzas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Raleway", 1, 36), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setOpaque(false);
@@ -102,8 +134,22 @@ public class OrderPage extends javax.swing.JFrame
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3" }));
-        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        SausagesPizza.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
+        SausagesPizza.setForeground(new java.awt.Color(0, 0, 0));
+        SausagesPizza.setText(" Sausages Pizza");
+        SausagesPizza.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        SausagesPizza.setFocusable(false);
+        SausagesPizza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SausagesPizza.setOpaque(false);
+        SausagesPizza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SausagesPizzaActionPerformed(evt);
+            }
+        });
+
+        jTextField12.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField12.setText("0");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -123,12 +169,12 @@ public class OrderPage extends javax.swing.JFrame
                         .addGap(67, 67, 67)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(SausagesPizza)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,46 +191,301 @@ public class OrderPage extends javax.swing.JFrame
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bbqPizza, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SausagesPizza, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 0), new java.awt.Color(102, 0, 0)), "Burgers", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Raleway", 1, 36), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setOpaque(false);
 
+
+        zingerBurger.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
+        zingerBurger.setForeground(new java.awt.Color(0, 0, 0));
+        zingerBurger.setText(" Zinger Burger");
+        zingerBurger.setOpaque(false);
+        zingerBurger.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        zingerBurger.setFocusable(false);
+        zingerBurger.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        zingerBurger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zingerBurgerActionPerformed(evt);
+            }
+        });
+
+        jTextField4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.setText("0");
+
+        grilledBurger.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
+        grilledBurger.setForeground(new java.awt.Color(0, 0, 0));
+        grilledBurger.setText(" Grilled Burger");
+        grilledBurger.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        grilledBurger.setOpaque(false);
+        grilledBurger.setFocusable(false);
+        grilledBurger.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        grilledBurger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                grilledBurgerActionPerformed(evt);
+            }
+        });
+
+        jTextField6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField6.setText("0");
+
+
+        jalapenoBurger.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
+        jalapenoBurger.setForeground(new java.awt.Color(0, 0, 0));
+        jalapenoBurger.setText(" Jalapeno Burger");
+        jalapenoBurger.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jalapenoBurger.setFocusable(false);
+        jalapenoBurger.setOpaque(false);
+        jalapenoBurger.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jalapenoBurger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jalapenoBurgerActionPerformed(evt);
+            }
+        });
+
+        jTextField8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField8.setText("0");
+
+        tikkaBurger.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
+        tikkaBurger.setForeground(new java.awt.Color(0, 0, 0));
+        tikkaBurger.setText(" Tikka Burger");
+        tikkaBurger.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tikkaBurger.setFocusable(false);
+        tikkaBurger.setOpaque(false);
+        tikkaBurger.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tikkaBurger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tikkaBurgerActionPerformed(evt);
+            }
+        });
+
+        jTextField11.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField11.setText("0");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 303, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(zingerBurger)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(grilledBurger)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jalapenoBurger)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(tikkaBurger)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(zingerBurger, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(grilledBurger, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jalapenoBurger, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tikkaBurger, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(56, 74, 82));
         jPanel4.setOpaque(false);
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), new java.awt.Color(153, 153, 153)));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 102, 51), new java.awt.Color(0, 51, 51)), "Drinks", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Raleway", 1, 36), new java.awt.Color(255, 255, 255))); // NOI18N
+
+        coldCoffee.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
+        coldCoffee.setForeground(new java.awt.Color(0, 0, 0));
+        coldCoffee.setText(" Cold Coffee");
+        coldCoffee.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        coldCoffee.setFocusable(false);
+        coldCoffee.setOpaque(false);
+        coldCoffee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        coldCoffee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coldCoffeeActionPerformed(evt);
+            }
+        });
+
+        jTextField5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField5.setText("0");
+
+        softDrink.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
+        softDrink.setForeground(new java.awt.Color(0, 0, 0));
+        softDrink.setText(" Soft-Drink");
+        softDrink.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        softDrink.setFocusable(false);
+        softDrink.setOpaque(false);
+        softDrink.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        softDrink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                softDrinkActionPerformed(evt);
+            }
+        });
+
+        jTextField7.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField7.setText("0");
+
+        tea.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
+        tea.setForeground(new java.awt.Color(0, 0, 0));
+        tea.setText(" Tea");
+        tea.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tea.setOpaque(false);
+        tea.setFocusable(false);
+        tea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                teaActionPerformed(evt);
+            }
+        });
+
+        jTextField9.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField9.setText("0");
+
+        hotCoffee.setFont(new java.awt.Font("Raleway", 0, 20)); // NOI18N
+        hotCoffee.setForeground(new java.awt.Color(0, 0, 0));
+        hotCoffee.setText(" Hot Coffee");
+        hotCoffee.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        hotCoffee.setOpaque(false);
+        hotCoffee.setFocusable(false);
+        hotCoffee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hotCoffee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hotCoffeeActionPerformed(evt);
+            }
+        });
+
+        jTextField10.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField10.setText("0");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 289, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(coldCoffee)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(softDrink)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(tea)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(hotCoffee)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(coldCoffee, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(softDrink, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tea, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hotCoffee, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        billGenerator.setBorder(null);
         billGenerator.setText("Generate Bill");
+        billGenerator.setFont(new java.awt.Font("Raleway", 1, 24)); // NOI18N
+        billGenerator.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        billGenerator.setkBorderRadius(25);
+        billGenerator.setkEndColor(new java.awt.Color(0, 102, 0));
+        billGenerator.setkHoverEndColor(new java.awt.Color(51, 255, 255));
+        billGenerator.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        billGenerator.setkHoverStartColor(new java.awt.Color(0, 0, 204));
+        billGenerator.setkPressedColor(new java.awt.Color(0, 255, 51));
+        billGenerator.setkSelectedColor(new java.awt.Color(255, 0, 153));
+        billGenerator.setkStartColor(new java.awt.Color(0, 102, 51));
         billGenerator.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 billGeneratorActionPerformed(evt);
             }
         });
+
+        exitButton.setBorder(null);
+        exitButton.setText("Exit");
+        exitButton.setFont(new java.awt.Font("Raleway", 1, 36)); // NOI18N
+        exitButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        exitButton.setIconTextGap(5);
+        exitButton.setkBorderRadius(20);
+        exitButton.setkEndColor(new java.awt.Color(102, 0, 0));
+        exitButton.setkHoverEndColor(new java.awt.Color(204, 0, 0));
+        exitButton.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        exitButton.setkHoverStartColor(new java.awt.Color(102, 0, 0));
+        exitButton.setkPressedColor(new java.awt.Color(0, 153, 0));
+        exitButton.setkSelectedColor(new java.awt.Color(0, 204, 204));
+        exitButton.setkStartColor(new java.awt.Color(255, 0, 0));
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitButtonActionPerformed(evt);
+            }
+        });
+
+        kButton1.setBorder(null);
+        kButton1.setText("View Prices");
+        kButton1.setFont(new java.awt.Font("Raleway", 1, 24)); // NOI18N
+        kButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        kButton1.setkBorderRadius(25);
+        kButton1.setkEndColor(new java.awt.Color(102, 255, 255));
+        kButton1.setkHoverEndColor(new java.awt.Color(0, 0, 204));
+        kButton1.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        kButton1.setkHoverStartColor(new java.awt.Color(153, 0, 153));
+        kButton1.setkPressedColor(new java.awt.Color(255, 51, 102));
+        kButton1.setkSelectedColor(new java.awt.Color(204, 0, 153));
+        kButton1.setkStartColor(new java.awt.Color(0, 0, 204));
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -197,14 +498,18 @@ public class OrderPage extends javax.swing.JFrame
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(243, 243, 243)
-                .addComponent(billGenerator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(95, 95, 95)
+                .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(152, 152, 152)
+                .addComponent(billGenerator, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,9 +521,12 @@ public class OrderPage extends javax.swing.JFrame
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(billGenerator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addGap(18, 18, 18)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(billGenerator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -252,10 +560,16 @@ public class OrderPage extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void tandooriPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tandooriPizzaActionPerformed
+        
+        String tpt = jTextField1.getText();
+        int tpn = Integer.parseInt(tpt);
+       
         if(tandooriPizza.isSelected())
         {
             foodItems.add(tandooriPizza.getLabel());
+            tpp = tpn * tp;
             System.out.println("Checked " + tandooriPizza.getLabel());
         }
         else
@@ -291,16 +605,34 @@ public class OrderPage extends javax.swing.JFrame
         }
     }//GEN-LAST:event_bbqPizzaActionPerformed
 
+    private void SausagesPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SausagesPizzaActionPerformed
+        if(SausagesPizza.isSelected())
+        {
+            foodItems.add(SausagesPizza.getLabel());
+            System.out.println("Checked " + SausagesPizza.getLabel());
+        }
+        else
+        {
+            System.out.println("UnChecked");
+            foodItems.remove(SausagesPizza.getLabel());
+        }
+    }//GEN-LAST:event_SausagesPizzaActionPerformed
+
     private void billGeneratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billGeneratorActionPerformed
         
         Bill bill = new Bill();
         bill.setVisible(true);
-        bill.BillText.setText(foodItems.toString());
+        
+        for (int i = 0 ; i < foodItems.size() ; i++)
+        {
+            theBill.append(foodItems.get(i)).append(System.lineSeparator());
+        }
+        bill.BillText.setText(theBill.toString());
         
         /*
         for (int i = 0 ; i < foodItems.size() ; i++)
         {
-            bill.append(foodItems.get(i)).append(System.lineSeparator());
+            theBill.append(foodItems.get(i)).append(System.lineSeparator());
         }
         
         JOptionPane.showMessageDialog(null,bill,"Your Bill",1);
@@ -310,6 +642,104 @@ public class OrderPage extends javax.swing.JFrame
         }
         */
     }//GEN-LAST:event_billGeneratorActionPerformed
+
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitButtonActionPerformed
+
+    private void zingerBurgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zingerBurgerActionPerformed
+        if(zingerBurger.isSelected())
+        {
+            foodItems.add(zingerBurger.getLabel());
+            System.out.println("Checked " + zingerBurger.getLabel());
+        }
+        else
+        {
+            System.out.println("UnChecked");
+            foodItems.remove(zingerBurger.getLabel());
+        }
+    }//GEN-LAST:event_zingerBurgerActionPerformed
+
+	private void jalapenoBurgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jalapenoBurgerActionPerformed
+        if(jalapenoBurger.isSelected())
+        {
+            foodItems.add(jalapenoBurger.getLabel());
+            System.out.println("Checked " + jalapenoBurger.getLabel());
+        }
+        else
+        {
+            System.out.println("UnChecked");
+            foodItems.remove(jalapenoBurger.getLabel());
+        }
+    }//GEN-LAST:event_jalapenoBurgerActionPerformed
+
+    private void tikkaBurgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tikkaBurgerActionPerformed
+        if(tikkaBurger.isSelected())
+        {
+            foodItems.add(tikkaBurger.getLabel());
+            System.out.println("Checked " + tikkaBurger.getLabel());
+        }
+        else
+        {
+            System.out.println("UnChecked");
+            foodItems.remove(tikkaBurger.getLabel());
+        }
+    }//GEN-LAST:event_tikkaBurgerActionPerformed
+
+    private void coldCoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coldCoffeeActionPerformed
+        if(coldCoffee.isSelected())
+        {
+            foodItems.add(coldCoffee.getLabel());
+            System.out.println("Checked " + coldCoffee.getLabel());
+        }
+        else
+        {
+            System.out.println("UnChecked");
+            foodItems.remove(coldCoffee.getLabel());
+        }
+    }//GEN-LAST:event_coldCoffeeActionPerformed
+
+
+    private void softDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_softDrinkActionPerformed
+        if(softDrink.isSelected())
+        {
+            foodItems.add(softDrink.getLabel());
+            System.out.println("Checked " + softDrink.getLabel());
+        }
+        else
+        {
+            System.out.println("UnChecked");
+            foodItems.remove(softDrink.getLabel());
+        }
+    }//GEN-LAST:event_softDrinkActionPerformed
+
+
+    private void teaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teaActionPerformed
+        if(tea.isSelected())
+        {
+            foodItems.add(tea.getLabel());
+            System.out.println("Checked " + tea.getLabel());
+        }
+        else
+        {
+            System.out.println("UnChecked");
+            foodItems.remove(tea.getLabel());
+        }
+    }//GEN-LAST:event_teaActionPerformed
+
+    private void hotCoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hotCoffeeActionPerformed
+        if(hotCoffee.isSelected())
+        {
+            foodItems.add(hotCoffee.getLabel());
+            System.out.println("Checked " + hotCoffee.getLabel());
+        }
+        else
+        {
+            System.out.println("UnChecked");
+            foodItems.remove(hotCoffee.getLabel());
+        }
+    }//GEN-LAST:event_hotCoffeeActionPerformed
+   
 
     public static void main(String args[])
     {
@@ -349,19 +779,38 @@ public class OrderPage extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox SausagesPizza;
     private javax.swing.JCheckBox bbqPizza;
     private keeptoo.KButton billGenerator;
+    private javax.swing.JCheckBox coldCoffee;
+    private keeptoo.KButton exitButton;
     private javax.swing.JCheckBox fajitaPizza;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JCheckBox grilledBurger;
+    private javax.swing.JCheckBox hotCoffee;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JCheckBox jalapenoBurger;
+    private keeptoo.KButton kButton1;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JCheckBox softDrink;
     private javax.swing.JCheckBox tandooriPizza;
+    private javax.swing.JCheckBox tea;
+    private javax.swing.JCheckBox tikkaBurger;
+    private javax.swing.JCheckBox zingerBurger;
     // End of variables declaration//GEN-END:variables
 }
