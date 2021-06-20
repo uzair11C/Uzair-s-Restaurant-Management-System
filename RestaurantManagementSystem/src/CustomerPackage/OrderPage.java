@@ -1,25 +1,74 @@
 package CustomerPackage;
 
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 public class OrderPage extends javax.swing.JFrame 
 {
     public ArrayList<String> foodItems = new ArrayList<String>();
     
-    StringBuilder theBill = new StringBuilder();
-
+    public ArrayList<Integer> itemCount = new ArrayList<Integer>();
     
+    StringBuilder theBill = new StringBuilder();
     
     public int tp = 1000, fp = 1000 , bp = 1000 ,sp = 1000 , 
             zb = 350, gb = 300 , jb = 300 ,tb = 300 , 
                cc = 200 , sd = 100 , teaRate = 70 , hc = 100 , price = 0;
     
-    public int tpp,fpp,bpp,spp,zbp,gbp,jbp,tbp,ccp,sdp,teap,hcp;
+    public int tpn,fpn,bpn,spn,zbn,gbn,jbn,tbn,ccn,sdn,tean,hcn;
     
     public int priceCalculator()
     {
-        price = tpp + fpp + bpp + spp + zbp + gbp + jbp + tbp  + ccp + sdp + teap + hcp;
+        String tpt = jTextField1.getText();
+        tpn = Integer.parseInt(tpt);
+        itemCount.add(tpn);
+                
+        String fpt = jTextField2.getText();
+        fpn = Integer.parseInt(fpt);
+        itemCount.add(fpn);
+                
+        String bpt = jTextField3.getText();
+        bpn = Integer.parseInt(bpt);
+        itemCount.add(bpn);
+                
+        String spt = jTextField12.getText();
+        spn = Integer.parseInt(spt);
+        itemCount.add(spn);
+                
+        String zbt = jTextField4.getText();
+        zbn = Integer.parseInt(zbt);
+        itemCount.add(zbn);
+                
+        String gbt = jTextField6.getText();
+        gbn = Integer.parseInt(gbt);
+        itemCount.add(gbn);
+                
+        String jbt = jTextField8.getText();
+        jbn = Integer.parseInt(jbt);
+        itemCount.add(jbn);
+                
+        String tbt = jTextField11.getText();
+        tbn = Integer.parseInt(tbt);
+        itemCount.add(tbn);
+                
+        String cct = jTextField5.getText();
+        ccn = Integer.parseInt(cct);
+        itemCount.add(ccn);
+                
+        String sdt = jTextField7.getText();
+        sdn = Integer.parseInt(sdt);
+        itemCount.add(sdn);
+        
+        String teat = jTextField9.getText();
+        tean = Integer.parseInt(teat);
+        itemCount.add(tean);
+                
+        String hct = jTextField10.getText();
+        hcn = Integer.parseInt(hct);
+        itemCount.add(hcn);
+        
+        price = (tp * tpn) + (fp * fpn) + (bp * bpn) + (sp * spn) + 
+                (zb * zbn) + (gb * gbn) + (jb * jbn) + (tb * tbn) + 
+                (cc * ccn) + (sd * sdn) + (teaRate * tean) + (hc * hcn);
         return price;
     }
     
@@ -562,14 +611,11 @@ public class OrderPage extends javax.swing.JFrame
 
     
     private void tandooriPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tandooriPizzaActionPerformed
+
         
-        String tpt = jTextField1.getText();
-        int tpn = Integer.parseInt(tpt);
-       
         if(tandooriPizza.isSelected())
         {
             foodItems.add(tandooriPizza.getLabel());
-            tpp = tpn * tp;
             System.out.println("Checked " + tandooriPizza.getLabel());
         }
         else
@@ -580,6 +626,7 @@ public class OrderPage extends javax.swing.JFrame
     }//GEN-LAST:event_tandooriPizzaActionPerformed
 
     private void fajitaPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fajitaPizzaActionPerformed
+
         if(fajitaPizza.isSelected())
         {
             foodItems.add(fajitaPizza.getLabel());
@@ -593,6 +640,7 @@ public class OrderPage extends javax.swing.JFrame
     }//GEN-LAST:event_fajitaPizzaActionPerformed
 
     private void bbqPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bbqPizzaActionPerformed
+
         if(bbqPizza.isSelected())
         {
             foodItems.add(bbqPizza.getLabel());
@@ -606,6 +654,7 @@ public class OrderPage extends javax.swing.JFrame
     }//GEN-LAST:event_bbqPizzaActionPerformed
 
     private void SausagesPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SausagesPizzaActionPerformed
+
         if(SausagesPizza.isSelected())
         {
             foodItems.add(SausagesPizza.getLabel());
@@ -623,24 +672,14 @@ public class OrderPage extends javax.swing.JFrame
         Bill bill = new Bill();
         bill.setVisible(true);
         
-        for (int i = 0 ; i < foodItems.size() ; i++)
+        for (int i = 0 ; i < 12 ; i++)
         {
-            theBill.append(foodItems.get(i)).append(System.lineSeparator());
+            theBill.append(
+                            foodItems.get(i) + "    x" + itemCount.get(i) + "\n\n" 
+                                    + priceCalculator()
+                    ).append(System.lineSeparator());
         }
         bill.BillText.setText(theBill.toString());
-        
-        /*
-        for (int i = 0 ; i < foodItems.size() ; i++)
-        {
-            theBill.append(foodItems.get(i)).append(System.lineSeparator());
-        }
-        
-        JOptionPane.showMessageDialog(null,bill,"Your Bill",1);
-        for (int i = 0 ; i < foodItems.size() ; i++)
-        {
-            bill.append("");
-        }
-        */
     }//GEN-LAST:event_billGeneratorActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -648,6 +687,7 @@ public class OrderPage extends javax.swing.JFrame
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void zingerBurgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zingerBurgerActionPerformed
+  
         if(zingerBurger.isSelected())
         {
             foodItems.add(zingerBurger.getLabel());
@@ -660,8 +700,23 @@ public class OrderPage extends javax.swing.JFrame
         }
     }//GEN-LAST:event_zingerBurgerActionPerformed
 
+    private void grilledBurgerActionPerformed(java.awt.event.ActionEvent evt)
+    {
+        if(zingerBurger.isSelected())
+        {
+            foodItems.add(grilledBurger.getLabel());
+            System.out.println("Checked " + grilledBurger.getLabel());
+        }
+        else
+        {
+            System.out.println("UnChecked");
+            foodItems.remove(grilledBurger.getLabel());
+        }
+    }
+    
 	private void jalapenoBurgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jalapenoBurgerActionPerformed
-        if(jalapenoBurger.isSelected())
+  
+            if(jalapenoBurger.isSelected())
         {
             foodItems.add(jalapenoBurger.getLabel());
             System.out.println("Checked " + jalapenoBurger.getLabel());
@@ -674,6 +729,8 @@ public class OrderPage extends javax.swing.JFrame
     }//GEN-LAST:event_jalapenoBurgerActionPerformed
 
     private void tikkaBurgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tikkaBurgerActionPerformed
+
+        
         if(tikkaBurger.isSelected())
         {
             foodItems.add(tikkaBurger.getLabel());
@@ -687,6 +744,7 @@ public class OrderPage extends javax.swing.JFrame
     }//GEN-LAST:event_tikkaBurgerActionPerformed
 
     private void coldCoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coldCoffeeActionPerformed
+
         if(coldCoffee.isSelected())
         {
             foodItems.add(coldCoffee.getLabel());
@@ -701,6 +759,7 @@ public class OrderPage extends javax.swing.JFrame
 
 
     private void softDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_softDrinkActionPerformed
+
         if(softDrink.isSelected())
         {
             foodItems.add(softDrink.getLabel());
@@ -715,6 +774,7 @@ public class OrderPage extends javax.swing.JFrame
 
 
     private void teaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teaActionPerformed
+
         if(tea.isSelected())
         {
             foodItems.add(tea.getLabel());
@@ -728,6 +788,7 @@ public class OrderPage extends javax.swing.JFrame
     }//GEN-LAST:event_teaActionPerformed
 
     private void hotCoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hotCoffeeActionPerformed
+
         if(hotCoffee.isSelected())
         {
             foodItems.add(hotCoffee.getLabel());
@@ -743,7 +804,7 @@ public class OrderPage extends javax.swing.JFrame
 
     public static void main(String args[])
     {
-        /* Set the Nimbus look and feel */
+        /* Set the Dark Metal look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 

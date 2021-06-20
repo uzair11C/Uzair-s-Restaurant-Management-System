@@ -118,6 +118,7 @@ public class Bill extends javax.swing.JFrame {
         order.setResizable(false);
         order.setVisible(true);
         repaint();
+        this.dispose();
     }//GEN-LAST:event_kButton1ActionPerformed
 
     /**
